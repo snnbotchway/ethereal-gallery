@@ -26,17 +26,18 @@ jobs:
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Set working directory
-        run: cd ./hardhat
-
       - name: Install dependencies
         run: yarn install
+        working-directory: ./hardhat
 
       - name: Run Solhint
         run: yarn lint
+        working-directory: ./hardhat
 
       - name: Run Prettier
         run: yarn prettier -c .
+        working-directory: ./hardhat
 
       - name: Run tests
         run: yarn hardhat test
+        working-directory: ./hardhat
