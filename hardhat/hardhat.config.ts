@@ -20,6 +20,12 @@ const config: HardhatUserConfig = {
         compilers: [
             {
                 version: "0.8.18",
+                settings: {
+                    optimizer: {
+                        enabled: true,
+                        runs: 200,
+                    },
+                },
             },
         ],
     },
@@ -48,7 +54,7 @@ const config: HardhatUserConfig = {
         noColors: true,
         currency: "GHS",
         coinmarketcap: COINMARKETCAP_API_KEY,
-        token: "MATIC",
+        token: "ARB",
     },
     namedAccounts: {
         deployer: {
