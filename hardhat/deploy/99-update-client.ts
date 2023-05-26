@@ -2,8 +2,8 @@ import fs from "fs-extra"
 import { ethers, network } from "hardhat"
 import path from "path"
 
-const contractName = "Raffle"
-const clientFolderName = "nextjs-smart-raffle"
+const contractName = "IERC721"
+const clientFolderName = "client"
 let constantsPath: string
 
 export default async () => {
