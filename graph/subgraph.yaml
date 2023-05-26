@@ -1,0 +1,31 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: EtherealGallery
+    network: sepolia
+    source:
+      address: "0xdb4E9F76A7024D49713A8F03Cb721F9a06c5FB73"
+      abi: EtherealGallery
+      startBlock: 3562886
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - OwnershipTransferred
+        - TokenListed
+        - TokenSaleCancelled
+        - TokenSold
+      abis:
+        - name: EtherealGallery
+          file: ./abis/EtherealGallery.json
+      eventHandlers:
+        - event: TokenListed(indexed address,indexed address,indexed uint256,uint256)
+          handler: handleTokenListed
+        - event: TokenSaleCancelled(indexed address,indexed address,indexed uint256,uint256)
+          handler: handleTokenSaleCancelled
+        - event: TokenSold(indexed address,indexed address,indexed uint256,uint256)
+          handler: handleTokenSold
+      file: ./src/ethereal-gallery.ts

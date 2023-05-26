@@ -1,0 +1,8 @@
+{
+	"sepolia": {
+		"EtherealGallery": {
+			"address": "0xdb4E9F76A7024D49713A8F03Cb721F9a06c5FB73",
+			"startBlock": 3562886
+		}
+	}
+}
