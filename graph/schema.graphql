@@ -1,0 +1,24 @@
+type TokenListed @entity(immutable: false) {
+	id: ID!
+	nftAddress: Bytes! # address
+	seller: Bytes! # address
+	price: BigInt! # uint256
+	tokenId: BigInt! # uint256
+	isActive: Boolean! # bool
+}
+
+type TokenSaleCancelled @entity(immutable: false) {
+	id: ID!
+	nftAddress: Bytes! # address
+	seller: Bytes! # address
+	price: BigInt! # uint256
+	tokenId: BigInt! # uint256
+}
+
+type TokenSold @entity(immutable: false) {
+	id: ID!
+	nftAddress: Bytes! # address
+	buyer: Bytes! # address
+	price: BigInt! # uint256
+	tokenId: BigInt! # uint256
+}
